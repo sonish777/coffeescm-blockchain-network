@@ -1,3 +1,10 @@
+query GetBatchById {
+  description: "Get batch by its id"
+  statement: 
+    SELECT org.coffeescm.Batch 
+      WHERE (batchId == _$batchId)
+}
+
 query GetBatchesOfGrower {
   description: "Get all the batches associated to a grower"
   statement:
