@@ -1,0 +1,23 @@
+query GetBatchesOfGrower {
+  description: "Get all the batches associated to a grower"
+  statement:
+  	SELECT org.coffeescm.Batch WHERE (grower == _$grower)
+}
+
+query GetBatchesOfFarmInspector {
+  description: "Get all the batches associated to a farm inspector"
+  statement:
+  	SELECT org.coffeescm.Batch WHERE (farmInspector == _$farmInspector)
+}
+
+query GetBatchesOfShipper {
+  description: "Get all the batches associated to a shipper"
+  statement:
+  	SELECT org.coffeescm.Batch WHERE (shipper == _$shipper)
+}
+
+query GetBatchesOfProcessor {
+  description: "Get all the batches associated to a processor"
+  statement:
+  	SELECT org.coffeescm.Batch WHERE (processor == _$processor)
+}
