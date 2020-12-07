@@ -1,8 +1,7 @@
 query GetBatchById {
   description: "Get batch by its id"
   statement: 
-    SELECT org.coffeescm.Batch 
-      WHERE (batchId == _$batchId)
+    SELECT org.coffeescm.Batch WHERE (batchId == _$batchId)
 }
 
 query GetBatchesOfGrower {
