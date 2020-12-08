@@ -88,14 +88,6 @@ rule ProcessorCannotViewOthersBatches {
   action: DENY
 }
 
-rule GrowerCannotUpdateBatch {
-  description: "Grower cannot update batch"
-  participant: "org.coffeescm.Grower"
-  operation: UPDATE
-  resource: "org.coffeescm.Batch"
-  action: DENY
-}
-
  rule ParticipantsCanUpdateBatch {
   description: "Participants can update batch"
   participant: "org.coffeescm.*"

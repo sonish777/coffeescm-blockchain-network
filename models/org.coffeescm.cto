@@ -19,6 +19,8 @@ asset Batch identified by batchId {
   o String typeOfSeed optional
   o String coffeeFamily optional
   o String[] fertilizersUsed optional
+  // Harvest Batch
+  o DateTime harvestedDateTime optional
   // Ship Batch
   o String warehouseName optional
   o String warehouseAddress optional
@@ -37,6 +39,7 @@ asset Batch identified by batchId {
 enum BatchStatus {
   o GROWING
   o INSPECTION
+  o HARVESTED
   o SHIPPING
   o PROCESSING
 }
@@ -90,13 +93,17 @@ transaction InspectBatch {
   o String[] fertilizersUsed
   --> Contract currentContract
 }
+  
+transaction Harvest {
+  --> Contract currentContract
+}
 
 transaction ShipBatch {
   o String warehouseName
   o String warehouseAddress
   o Double shippingQuantity
   o String shipId
-  o String shipName
+  o String shipName optional
   o DateTime estimatedDateTime
   --> Contract currentContract
 }
